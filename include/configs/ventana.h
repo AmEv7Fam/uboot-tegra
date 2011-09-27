@@ -55,8 +55,11 @@
 #define CONFIG_CMD_FAT
 
 
-/* Environment not stored */
-#define CONFIG_ENV_IS_NOWHERE
+/* Environment is stored in emmc */
+#define CONFIG_ENV_IS_IN_MMC            1
+#define CONFIG_SYS_MMC_ENV_DEV          0
+#define CONFIG_ENV_SIZE                 4096
+#define CONFIG_ENV_OFFSET		0x100000
 
 #define CONFIG_TEGRA2_GPIO
 #define CONFIG_CMD_TEGRA2_GPIO_INFO
