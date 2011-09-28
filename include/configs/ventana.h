@@ -82,12 +82,6 @@
 	CONFIG_EXT2_BOOT_HELPER_SETTINGS\
 	CONFIG_NETBOOT_SETTINGS \
 	\
-	"usb_boot=setenv devtype usb; " \
-		"setenv devnum 0; " \
-		"setenv devname sda; " \
-		"run run_disk_boot_script;" \
-		"run ext2_boot\0" \
-	\
 	"mmc_boot=mmc rescan ${devnum}; " \
 		"setenv devtype mmc; " \
 		"setenv devname mmcblk${devnum}p; " \
@@ -101,14 +95,8 @@
 		"run mmc_boot\0" \
 	\
 	"non_verified_boot=" \
-		"setenv dev_extras video=tegrafb console=tty0; "\
-		"setenv script_part 4; "\
-		"usb start; " \
-		"run usb_boot; " \
+		"setenv script_part 2; "\
 		"run mmc0_boot; " \
-		"setenv bootdev_bootargs " \
-		"mmc read 0 ${loadaddr} 0x1c00 0x2800 ; "\
-		"bootm ${loadaddr}; " \
 	\
 	"board=ventanta\0"
 

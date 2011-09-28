@@ -275,13 +275,13 @@
  */
 #define CONFIG_EXT2_BOOT_HELPER_SETTINGS \
 	"rootpart=3\0" \
-	"cros_bootfile=/boot/vmlinux.uimg\0" \
+	"cros_bootfile=/boot/uImage\0" \
 	\
 	"script_part=c\0" \
-	"script_img=/u-boot/boot.scr.uimg\0" \
+	"script_img=/u-boot/boot.scr\0" \
 	\
 	"run_disk_boot_script=" \
-		"if fatload ${devtype} ${devnum}:${script_part} " \
+		"if ext2load ${devtype} ${devnum}:${script_part} " \
 				"${loadaddr} ${script_img}; then " \
 			"source ${loadaddr}; " \
 		"fi\0" \
