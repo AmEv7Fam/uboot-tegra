@@ -278,7 +278,7 @@
 	"cros_bootfile=/boot/uImage\0" \
 	\
 	"script_part=c\0" \
-	"script_img=/u-boot/boot.scr\0" \
+	"script_img=/boot.scr\0" \
 	\
 	"run_disk_boot_script=" \
 		"if ext2load ${devtype} ${devnum}:${script_part} " \
